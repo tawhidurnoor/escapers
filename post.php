@@ -24,8 +24,7 @@
         <!-- Home -->
 
         <div class="home">
-            <div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/news.jpg"
-                data-speed="0.8"></div>
+            <div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/news.jpg" data-speed="0.8"></div>
             <div class="container">
                 <div class="row">
                     <div class="col">
@@ -88,51 +87,48 @@
                     <div class="col-lg-7">
                         <div class="contact_form_container">
                             <form action="Backend\continue_submitting_post.php" id="contact_form" class="clearfix">
-                                <input name="title" class="contact_input contact_input_name" type="text"
-                                    placeholder="Post title" required="required" data-error="Title is required.">
-                                <input name="places" class="contact_input contact_input_name" type="text"
-                                    placeholder="Places" required="required" data-error="Places are required.">
-                                <input name="money" class="contact_input contact_input_name" type="number"
-                                    placeholder="Money(taka) per person" required="required" data-error="Title is required.">
+                                <input name="title" class="contact_input contact_input_name" type="text" placeholder="Post title" required="required" data-error="Title is required.">
+                                <input name="places" class="contact_input contact_input_name" type="text" placeholder="Places" required="required" data-error="Places are required.">
+                                <input name="num_guest" class="contact_input contact_input_name" type="number" placeholder="Number of guest" required="required" data-error="Title is required.">
+                                <input name="cost" class="contact_input contact_input_name" type="number" placeholder="Money(taka) per person" required="required" data-error="Title is required.">
                                 <h5>Tour Date</h5>
-                                <input name="date" class="contact_input contact_input_subject"
-                                    type="date" placeholder="Subject">
-                                <textarea class="contact_message_input contact_input_message"
-                                     name="post" placeholder="Details about your tour" required="required"
-                                    data-error="Please, write about your tour."></textarea>
+                                <input name="held_at" class="contact_input contact_input_subject" type="date" required="required" data-error="Please, seelct tour date.">
+                                <textarea class="contact_message_input contact_input_message" name="post" placeholder="Details about your tour" required="required" data-error="Please, write about your tour."></textarea>
                                 <?php
-                                if (isset($_SESSION['u_id']))
-                                {
-                                  echo '<button type="submit" class="contact_send_btn trans_200"
+                                if (isset($_SESSION['u_id'])) {
+                                    echo '<button type="submit" class="contact_send_btn trans_200"
                                       value="Submit" >Post</button>';
                                 }
                                 ?>
                                 <br>
                                 <?php if (!isset($_SESSION['u_id'])) {
-                                  echo '<div class="alert alert-danger" role="alert">
-                                        You must <a href="LoginRegLogout\login.php" class="alert-link">login</a> in order to make a post.
+                                    echo '<div class="alert alert-danger" role="alert">
+                                        You must <a href="LoginRegLogout\login.php?return=post.php" class="alert-link">login</a> in order to make a post.
                                         </div>';
                                 }
-                                  ?>
+                                ?>
                             </form>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <script src="js/jquery-3.2.1.min.js"></script>
-                <script src="styles/bootstrap4/popper.js"></script>
-                <script src="styles/bootstrap4/bootstrap.min.js"></script>
-                <script src="plugins/greensock/TweenMax.min.js"></script>
-                <script src="plugins/greensock/TimelineMax.min.js"></script>
-                <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
-                <script src="plugins/greensock/animation.gsap.min.js"></script>
-                <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
-                <script src="plugins/easing/easing.js"></script>
-                <script src="plugins/parallax-js-master/parallax.min.js"></script>
-                <script
-                    src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA">
-                </script>
-                <script src="js/contact_custom.js"></script>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="styles/bootstrap4/popper.js"></script>
+    <script src="styles/bootstrap4/bootstrap.min.js"></script>
+    <script src="plugins/greensock/TweenMax.min.js"></script>
+    <script src="plugins/greensock/TimelineMax.min.js"></script>
+    <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="plugins/greensock/animation.gsap.min.js"></script>
+    <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+    <script src="plugins/easing/easing.js"></script>
+    <script src="plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA">
+    </script>
+    <script src="js/contact_custom.js"></script>
 </body>
 
 </html>

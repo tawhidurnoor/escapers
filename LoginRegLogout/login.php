@@ -54,17 +54,17 @@
                                 </div>
                                 <div class="form-group">
                                     <?php if (null != isset($_GET['error'])) {
-                    echo '<p class="text-danger">Wrong email or password.</p>';
-                  } ?>
+                                        echo '<p class="text-danger">Wrong email or password.</p>';
+                                    } ?>
                                 </div>
                                 <?php
                                 if (!isset($_GET['return'])) {
-                                  $return = "index.php";
+                                    $return = "index.php";
                                 } else {
-                                  $return = $_GET['return'];
+                                    $return = $_GET['return'];
                                 }
-                ?>
-                                <input type="text" value="<?php echo $return; ?>" style="display:none" name="return">
+                                ?>
+                                <input type="hidden" value="<?php echo $return; ?>" name="return">
                                 <div class="form-group">
                                     <button type="submit" name="login"
                                         class="btn btn-primary submit-btn btn-block">Login</button>

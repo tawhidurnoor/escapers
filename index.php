@@ -39,8 +39,7 @@
     <!-- Find Form -->
 
     <div class="find">
-        <div class="find_background parallax-window" data-parallax="scroll" data-image-src="images/find.jpg"
-            data-speed="0.8"></div>
+        <div class="find_background parallax-window" data-parallax="scroll" data-image-src="images/find.jpg" data-speed="0.8"></div>
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -48,36 +47,18 @@
                 </div>
                 <div class="col-12">
                     <div class="find_form_container">
-                        <form action="#" id="find_form"
-                            class="find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap">
+                        <form action="#" id="find_form" class="find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap">
                             <div class="find_item">
                                 <div>Destination:</div>
-                                <input type="text" class="destination find_input" required="required"
-                                    placeholder="Keyword here">
-                            </div>
-                            <div class="find_item">
-                                <div>Adventure type:</div>
-                                <select name="adventure" id="adventure" class="dropdown_item_select find_input">
-                                    <option>Categories</option>
-                                    <option>Categories</option>
-                                    <option>Categories</option>
-                                </select>
+                                <input type="text" class="destination find_input" required="required" placeholder="Keyword here">
                             </div>
                             <div class="find_item">
                                 <div>Min price</div>
-                                <select name="min_price" id="min_price" class="dropdown_item_select find_input">
-                                    <option>&nbsp;</option>
-                                    <option>Price</option>
-                                    <option>Price</option>
-                                </select>
+                                <input type="number" class="destination find_input" required="required" placeholder="Min price">
                             </div>
                             <div class="find_item">
                                 <div>Max price</div>
-                                <select name="max_price" id="max_price" class="dropdown_item_select find_input">
-                                    <option>&nbsp;</option>
-                                    <option>Price</option>
-                                    <option>Price</option>
-                                </select>
+                                <input type="number" class="destination find_input" required="required" placeholder="Max price">
                             </div>
                             <button class="button find_button">Find</button>
                         </form>
@@ -106,8 +87,7 @@
                     <!-- Top Destination Item -->
                     <div class="top_item">
                         <a href="#">
-                            <div class="top_item_image"><img src="images/top_1.jpg"
-                                    alt="https://unsplash.com/@sgabriel"></div>
+                            <div class="top_item_image"><img src="images/top_1.jpg" alt="https://unsplash.com/@sgabriel"></div>
                             <div class="top_item_content">
                                 <div class="top_item_text">Inani, CoxBazar</div>
                             </div>
@@ -120,8 +100,7 @@
                     <!-- Top Destination Item -->
                     <div class="top_item">
                         <a href="#">
-                            <div class="top_item_image"><img src="images/top_2.jpg"
-                                    alt="https://unsplash.com/@jenspeter"></div>
+                            <div class="top_item_image"><img src="images/top_2.jpg" alt="https://unsplash.com/@jenspeter"></div>
                             <div class="top_item_content">
                                 <div class="top_item_text">Sajek Vally</div>
                             </div>
@@ -134,8 +113,7 @@
                     <!-- Top Destination Item -->
                     <div class="top_item">
                         <a href="#">
-                            <div class="top_item_image"><img src="images/top_3.jpg"
-                                    alt="https://unsplash.com/@anikindimitry"></div>
+                            <div class="top_item_image"><img src="images/top_3.jpg" alt="https://unsplash.com/@anikindimitry"></div>
                             <div class="top_item_content">
                                 <div class="top_item_text">Kaptail Lake, Rangamati</div>
                             </div>
@@ -148,8 +126,7 @@
                     <!-- Top Destination Item -->
                     <div class="top_item">
                         <a href="#">
-                            <div class="top_item_image"><img src="images/top_4.jpg"
-                                    alt="https://unsplash.com/@hellolightbulb"></div>
+                            <div class="top_item_image"><img src="images/top_4.jpg" alt="https://unsplash.com/@hellolightbulb"></div>
                             <div class="top_item_content">
                                 <div class="top_item_text">Kantajir Temple, Dinajpur</div>
                             </div>
@@ -182,33 +159,33 @@
 
                         <!-- Post Post -->
                         <?php
-                           include_once "Backend\connection.php";
-                           $sql = "SELECT post_table.post_id, post_table.title, post_table.created_at, post_table.held_at, post_table.num_guest, post_table.places, post_table.cost, post_table.tour_type, post_table.post, users.f_name, users.l_name, users.u_id  FROM post_table INNER JOIN users ON post_table.u_id = users.u_id";
-                           $result = mysqli_query($conn, $sql);
+                        include_once "Backend\connection.php";
+                        $sql = "SELECT post_table.post_id, post_table.title, post_table.created_at, post_table.held_at, post_table.num_guest, post_table.places, post_table.cost, post_table.tour_type, post_table.post, users.f_name, users.l_name, users.u_id  FROM post_table INNER JOIN users ON post_table.u_id = users.u_id ORDER BY post_table.created_at DESC";
+                        $result = mysqli_query($conn, $sql);
 
-                           if (mysqli_num_rows($result) > 0) {
-                             // output data of each row
-                             while($row = mysqli_fetch_assoc($result)) {
-                               echo ' <div class="post_post">
-                                   <div class="post_title"><a href="/posts?id='.$row['post_id'].'">'.$row['title'].'</a></div>
+                        if (mysqli_num_rows($result) > 0) {
+                            // output data of each row
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo ' <div class="post_post">
+                                   <div class="post_title"><a href="postview.php?id=' . $row['post_id'] . '">' . $row['title'] . '</a></div>
                                    <div class="post_meta">
                                        <ul>
-                                           <li><a href="/users?id='.$row['u_id'].'">by ' . $row['f_name'] . " " . $row['l_name'] . '</a></li>
-                                           <li>'.$row['created_at'].'</li>
-                                           <li>'.$row['places'].'</li>
-                                           <li>'.$row['cost'].' Taka</li>
-                                           <li>'.$row['tour_type'].'</li>
+                                           <li><a href="/users?id=' . $row['u_id'] . '">by ' . $row['f_name'] . " " . $row['l_name'] . '</a></li>
+                                           <li>' . $row['created_at'] . '</li>
+                                           <li>' . $row['places'] . '</li>
+                                           <li>' . $row['cost'] . ' Taka</li>
+                                           <li>' . $row['tour_type'] . '</li>
                                        </ul>
                                    </div>
                                    <div class="post_text">
-                                       <p>'.$row['post'].'</p>
+                                       <p>' . $row['post'] . '</p>
                                    </div>
                                </div> ';
-                             }
-                           } else {
-                             echo "0 results";
-                           }
-                         ?>
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+                        ?>
 
                     </div>
                 </div>

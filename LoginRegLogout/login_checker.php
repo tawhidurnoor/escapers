@@ -21,9 +21,10 @@ if (mysqli_num_rows($result) > 0) {
     $_SESSION['u_type'] = $row['u_type'];
     $_SESSION['pro_pic'] = $row['pro_pic'];
 
-    $return = "Location:../" . $return;
-    header($return);
-    //header("Location:../index.php");
+    $return = "../" . $return;
+    //echo $return;
+    //header($return);
+    header("Location:" . $return);
   }
 } else {
   header("Location:login.php?error=1");

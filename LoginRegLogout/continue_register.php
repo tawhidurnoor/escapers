@@ -22,8 +22,6 @@ $sql = "INSERT INTO users(f_name, l_name, email, pass_1, pass_2, u_type, pro_pic
 
 mysqli_query($conn,$sql);
 
-include_once "../Backend/session_checker.php";
-$_SESSION['users'] = $email;
-header("Location:../index.php");
+header("Location:login.php");
 
 ?>
