@@ -47,7 +47,7 @@
                 </div>
                 <div class="form-group">
                   <div class="input-group">
-                    <input type="email" name="email" class="form-control" placeholder="Email">
+                    <input type="email" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email">
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>
@@ -77,12 +77,11 @@
                 </div>
                 <div class="form-group">
                   <?php if (null != isset($_GET['error'])) {
-                    if($_GET['error'] == "1"){
+                    if ($_GET['error'] == "1") {
                       echo '<p class="text-danger">Email already taken</p>';
-                    }else{
+                    } else {
                       echo '<p class="text-danger">Passwords Didn not match</p>';
                     }
-                
                   } ?>
                 </div>
                 <div class="form-group">

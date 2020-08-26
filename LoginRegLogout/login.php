@@ -32,7 +32,7 @@
                                 <div class="form-group">
                                     <label class="label">Email</label>
                                     <div class="input-group">
-                                        <input type="text" name="email" class="form-control" placeholder="Email">
+                                        <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" class="form-control" placeholder="Email">
                                         <div class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="mdi mdi-check-circle-outline"></i>
@@ -43,8 +43,7 @@
                                 <div class="form-group">
                                     <label class="label">Password</label>
                                     <div class="input-group">
-                                        <input type="password" name="password" class="form-control"
-                                            placeholder="*********">
+                                        <input type="password" name="password" class="form-control" placeholder="*********">
                                         <div class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="mdi mdi-check-circle-outline"></i>
@@ -66,8 +65,7 @@
                                 ?>
                                 <input type="hidden" value="<?php echo $return; ?>" name="return">
                                 <div class="form-group">
-                                    <button type="submit" name="login"
-                                        class="btn btn-primary submit-btn btn-block">Login</button>
+                                    <button type="submit" name="login" class="btn btn-primary submit-btn btn-block">Login</button>
                                 </div>
                                 <div class="text-block text-center my-3">
                                     <span class="text-small font-weight-semibold">Not a member ?</span>
